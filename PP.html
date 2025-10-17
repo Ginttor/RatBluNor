@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es"></html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>RBN</title>
+        <style>
+          body {
+            background-color: #fffb005e;
+            font-family: Arial, sans-serif;
+          }
+          h1,h3 {
+            color: #7e7e7e;
+          }
+          
+          /* Contenedor principal */
+          .producto-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+          }
+          
+          /* Estilo para cada tarjeta de video */
+          .producto-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 15px;
+            width: 320px;
+            transition: transform 0.3s ease;
+          }
+          
+          .producto-card:hover {
+            transform: scale(1.03);
+          }
+          
+          /* Miniatura del video */
+          .producto-thumbnail {
+            width: 100%;
+            height: 180px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            object-fit: cover;
+          }
+          
+          /* Título del video */
+          .producto-title {
+            background-color: #38c1eb;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0 0 10px;
+          }
+          
+          /* Descripción del video */
+          .producto-description {
+            font-size: 14px;
+            color: #606060;
+            margin: 0;
+          }
+          
+
+        .search-container {
+            text-align: center;
+        }
+        .search-bar {
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        .quick-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .quick-buttons button {
+            padding: 10px 15px;
+            cursor: pointer;
+            background-color: #007BFF;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .quick-buttons button:hover {
+            background-color: #0056b3;
+        }
+          </style>
+        <h1>RatBluNor</h1>
+    </head>
+    <body>
+        <div style="background-color:#daf87d;"id="elemento">
+            <h3>Productos</h3>
+            <input type="text" id="search" class="search-bar" placeholder="Buscar..." onkeyup="filterList()">
+            <button onclick="abrirEnlaceAleatorio()" color="#daf87d">SINTONIZAR</button>
+            <div class="quick-buttons">
+              <button onclick="setSearchText('');filterList();cambiarColor('#daf87d')">Borrar</button>
+              <button onclick="setSearchText('img');filterList();cambiarColor('#ffffff')">Imagen</button>
+              <button onclick="setSearchText('vid');filterList();cambiarColor('#000000')">Video</button>
+              <button onclick="setSearchText('aud');filterList();cambiarColor('#38c1eb')">Audio</button>
+              <button onclick="setSearchText('txt');filterList();cambiarColor('#f8d77d')">Texto</button>
+          </div>
+            <div id="item-list" class="producto-container">
+<!--EEEEEEEEEEEEEEEEEEEEEEEE-->
+
+            </div>,,,
+        </div>
+    </body>
+    <script>
+        // Obtener todos los elementos de video y audio
+        const mediaElements = document.querySelectorAll('video, audio');
+        // Añadir evento a cada elemento
+        mediaElements.forEach(element => {
+            element.addEventListener('play', () => {
+                // Pausar todos los elementos excepto el que se está reproduciendo
+                mediaElements.forEach(el => {
+                    if (el !== element) {
+                        el.pause();
+                    }
+                });
+            });
+        });
+        function cambiarColor(color) {
+              document.getElementById('elemento').style.backgroundColor = color;
+          }
+        function setSearchText(text) {
+          document.getElementById('search').value = text;
+          }
+        function filterList() {
+            // Obtener el valor del campo de búsqueda y convertirlo a minúsculas
+            let searchInput = document.getElementById("search").value.toLowerCase();
+            
+            // Obtener la lista de elementos
+            let items = document.getElementById("item-list").getElementsByTagName("div");
+
+            // Iterar sobre cada elemento y mostrar/ocultar según coincida con la búsqueda
+            for (let i = 0; i < items.length; i++) {
+                let item = items[i].textContent || items[i].innerText;
+
+                // Mostrar el elemento si coincide con la búsqueda
+                if (item.toLowerCase().indexOf(searchInput) > -1) {
+                    items[i].style.display = "";
+                } else {
+                    // Ocultar el elemento si no coincide
+                    items[i].style.display = "none";
+                }
+            }
+        }
+    const checkboxes = document.querySelectorAll('input[name="opcion"]');
+
+    // Limitar a 3 selecciones
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', function () {
+        const checkedCount = document.querySelectorAll('input[name="opcion"]:checked').length;
+        if (checkedCount > 100) {
+          this.checked = false; // Desmarca el último seleccionado
+        }
+      });
+    });
+    // Array de enlaces
+        const enlaces = [
+            //--LINKKKKSSSS--//
+        ];
+
+        // Función para abrir un enlace aleatorio
+        function abrirEnlaceAleatorio() {
+            const indiceAleatorio = Math.floor(Math.random() * enlaces.length);
+            window.location.href = enlaces[indiceAleatorio];
+        }
+    </script>
+</html>

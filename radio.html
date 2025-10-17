@@ -1,0 +1,231 @@
+
+    <!DOCTYPE html>
+<html lang="es"></html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>RBN</title>
+        <style>
+          body {
+            background-color: #fffb005e;
+            font-family: Arial, sans-serif;
+          }
+          h1,h3 {
+            color: #7e7e7e;
+          }
+          
+          /* Contenedor principal */
+          .producto-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+          }
+          
+          /* Estilo para cada tarjeta de video */
+          .producto-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 15px;
+            width: 320px;
+            transition: transform 0.3s ease;
+          }
+          
+          .producto-card:hover {
+            transform: scale(1.03);
+          }
+          
+          /* Miniatura del video */
+          .producto-thumbnail {
+            width: 100%;
+            height: 180px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            object-fit: cover;
+          }
+          
+          /* Título del video */
+          .producto-title {
+            background-color: #38c1eb;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0 0 10px;
+          }
+          
+          /* Descripción del video */
+          .producto-description {
+            font-size: 14px;
+            color: #606060;
+            margin: 0;
+          }
+          
+
+        .search-container {
+            text-align: center;
+        }
+        .search-bar {
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        .quick-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .quick-buttons button {
+            padding: 10px 15px;
+            cursor: pointer;
+            background-color: #007BFF;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .quick-buttons button:hover {
+            background-color: #0056b3;
+        }
+          </style>
+        <h1>RatBluNor</h1>
+    </head>
+    <body>
+        <div style="background-color:#daf87d;"id="elemento">
+            <h3>Productos</h3>
+            <input type="text" id="search" class="search-bar" placeholder="Buscar..." onkeyup="filterList()">
+            <button onclick="abrirEnlaceAleatorio()" color="#daf87d">SINTONIZAR</button>
+            <div class="quick-buttons">
+              <button onclick="setSearchText('');filterList();cambiarColor('#daf87d')">Borrar</button>
+              <button onclick="setSearchText('img');filterList();cambiarColor('#ffffff')">Imagen</button>
+              <button onclick="setSearchText('vid');filterList();cambiarColor('#000000')">Video</button>
+              <button onclick="setSearchText('aud');filterList();cambiarColor('#38c1eb')">Audio</button>
+              <button onclick="setSearchText('txt');filterList();cambiarColor('#f8d77d')">Texto</button>
+          </div>
+            <div id="item-list" class="producto-container">
+<div class='producto-card'><h4 class='producto-title'><a href='https://www.google.com'>https://www.google.com</a></h4><p class='producto-thumbnail'>
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.github.com'>https://www.github.com</a></h4><p class='producto-thumbnail'>pagina para rebisar codigos abierto
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.stackoverflow.com'>https://www.stackoverflow.com</a></h4><p class='producto-thumbnail'>
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.youtube.com'>https://www.youtube.com</a></h4><p class='producto-thumbnail'>ver videos
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.wikipedia.org'>https://www.wikipedia.org</a></h4><p class='producto-thumbnail'>
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.mozilla.org'>https://www.mozilla.org</a></h4><p class='producto-thumbnail'>
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.freecodecamp.org'>https://www.freecodecamp.org</a></h4><p class='producto-thumbnail'>
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.youtube.com/@saiks7910'>https://www.youtube.com/@saiks7910</a></h4><p class='producto-thumbnail'>cazador español de platinos de videojuegos
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.codecademy.com'>https://www.codecademy.com</a></h4><p class='producto-thumbnail'>
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.udemy.com'>https://www.udemy.com</a></h4><p class='producto-thumbnail'>
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://m.youtube.com/@MiguelASSAL'>https://m.youtube.com/@MiguelASSAL</a></h4><p class='producto-thumbnail'>consejos de primeros ausilios y seguridad y precausion
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://m.youtube.com/@dateunvlog'>https://m.youtube.com/@dateunvlog</a></h4><p class='producto-thumbnail'>ciensia, datos curiosos y cosas relasionadas a la fosoca
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://es.babbel.com'>https://es.babbel.com</a></h4><p class='producto-thumbnail'>par aprender idiomas
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://m.youtube.com/@elescocesgamer'>https://m.youtube.com/@elescocesgamer</a></h4><p class='producto-thumbnail'>canal enfocado a la histori y en ocasiones a probar algun jiego
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://m.youtube.com/@charlitocooks'>https://m.youtube.com/@charlitocooks</a></h4><p class='producto-thumbnail'>cosisero, xhef de comida para el hogar algo rustica pero delisiosa y sensilla
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://m.youtube.com/feed/subscriptions'>https://m.youtube.com/feed/subscriptions</a></h4><p class='producto-thumbnail'>tus suscripsiones en youtube
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://m.youtube.com/@mirioz58calbo'>https://m.youtube.com/@mirioz58calbo</a></h4><p class='producto-thumbnail'>chupa berga que caz pltinos y es argentino
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://m.youtube.com/@LackadaisyComic'>https://m.youtube.com/@LackadaisyComic</a></h4><p class='producto-thumbnail'>poduccon dew un serie wewp de gatos mfiosos en los 90
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://m.youtube.com/@SOMMER_OFICIAL'>https://m.youtube.com/@SOMMER_OFICIAL</a></h4><p class='producto-thumbnail'>contador de historis buenisims  dse ms der much litertura
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://m.youtube.com/@Platonto'>https://m.youtube.com/@Platonto</a></h4><p class='producto-thumbnail'>filosofia esplicada con maicraf de dsiovewrsos utores
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://linktr.ee/glitch_prod'>https://linktr.ee/glitch_prod</a></h4><p class='producto-thumbnail'>pagina "ofisioal" de GLISH
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.youtube.com/@GLITCH'>https://www.youtube.com/@GLITCH</a></h4><p class='producto-thumbnail'>canal de los videos de GLISH
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://store.steampowered.com'>https://store.steampowered.com</a></h4><p class='producto-thumbnail'>la tiemda numero 1 en distribusion de juegos para PC
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.linkedin.com'>https://www.linkedin.com</a></h4><p class='producto-thumbnail'>pagina de busqueda de trabajo a nivel internasional
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://mangaplus.shueisha.co.jp'>https://mangaplus.shueisha.co.jp</a></h4><p class='producto-thumbnail'>mangas para leer
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.youtube.com/@Basquecraft'>https://www.youtube.com/@Basquecraft</a></h4><p class='producto-thumbnail'>Aupa! Me llamo Iker y este canal está enfocado a mis actividades bushcraft. Compartiré mis tareas al aire libre, artesanias, temáticas de supervivencia y mucho más. Seguidme en este viaje y podréis ver mi progresión continua mientras adquiero nuevas habilidades y exploro nuevos (y viejos) caminos.
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.twitch.tv/'>https://www.twitch.tv/</a></h4><p class='producto-thumbnail'>directos muy largos
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.twitch.tv/directory/category/splatoon-3'>https://www.twitch.tv/directory/category/splatoon-3</a></h4><p class='producto-thumbnail'>directos de el juego de splatun
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.youtube.com/@SrtoBetto'>https://www.youtube.com/@SrtoBetto</a></h4><p class='producto-thumbnail'>el mejor in formante de videojuegos con mucho estilo, y uno de los mejores youtubers
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.youtube.com/@AUNToficial'>https://www.youtube.com/@AUNToficial</a></h4><p class='producto-thumbnail'>proyecto de siensia ficion oscura o grindar, producto de un insomnio de una noche de verano
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.youtube.com/@Pemchomchoproject'>https://www.youtube.com/@Pemchomchoproject</a></h4><p class='producto-thumbnail'>un potcas que supuestamente debe difundir notisias
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.youtube.com/@DungeonSoup'>https://www.youtube.com/@DungeonSoup</a></h4><p class='producto-thumbnail'>creador de una buena sireie de un barbaro mamadisimo
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.youtube.com/@gohuntleo'>https://www.youtube.com/@gohuntleo</a></h4><p class='producto-thumbnail'>reacciones a videos, y en ocasiones datos curiosos
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.youtube.com/@3Huntle0'>https://www.youtube.com/@3Huntle0</a></h4><p class='producto-thumbnail'>warhammer 40k
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.youtube.com/@SrBaityBait'>https://www.youtube.com/@SrBaityBait</a></h4><p class='producto-thumbnail'>Imagina que tienes dos Baitys y uno hace vídeos editados
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.reddit.com'>https://www.reddit.com</a></h4><p class='producto-thumbnail'>pos y cosas debatibles
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.youtube.com/@Flashgitz'>https://www.youtube.com/@Flashgitz</a></h4><p class='producto-thumbnail'>creadores de la serie SPEIS KING...
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.youtube.com/@GekkoH'>https://www.youtube.com/@GekkoH</a></h4><p class='producto-thumbnail'>hace buenos resumenes de animes
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.youtube.com/@TheWildProject'>https://www.youtube.com/@TheWildProject</a></h4><p class='producto-thumbnail'>el mejor potcas de abla ispana
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.youtube.com/@1Huntleo-hg4vg'>https://www.youtube.com/@1Huntleo-hg4vg</a></h4><p class='producto-thumbnail'>gameplays de Leo
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.youtube.com/@TheOdd1sOutES'>https://www.youtube.com/@TheOdd1sOutES</a></h4><p class='producto-thumbnail'>Ahora puedes disfrutar de todo el contenido de The Odd 1s Out doblado al español. ¡Prepárate para reír, aprender y recordar que ser un poco raro es lo mejor de la vida! 
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.youtube.com/@SoloFonseca'>https://www.youtube.com/@SoloFonseca</a></h4><p class='producto-thumbnail'>notisias y geopolitica con un calbo bien bestido
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.youtube.com/@NateGentile7'>https://www.youtube.com/@NateGentile7</a></h4><p class='producto-thumbnail'>canal de tecnologia que empeso haciendo revius de teclados
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://www.youtube.com/@Baity-Vod'>https://www.youtube.com/@Baity-Vod</a></h4><p class='producto-thumbnail'>directos resubidos de Baity, sobre juegos, notisias, o charlas
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://x.com/glitch_prod'>https://x.com/glitch_prod</a></h4><p class='producto-thumbnail'>canal que ase series webs
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://x.com/SaltyPokerFace'>https://x.com/SaltyPokerFace</a></h4><p class='producto-thumbnail'>creador de un comic de un romanse con una chica Buo
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://x.com/swfx_waifu'>https://x.com/swfx_waifu</a></h4><p class='producto-thumbnail'>sensualidad y sexualidad de Sweetie Fox
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://x.com/home'>https://x.com/home</a></h4><p class='producto-thumbnail'>mensajes de odio, opiniones, notisias, y cosas interesantes
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://x.com/Nagrolaz'>https://x.com/Nagrolaz</a></h4><p class='producto-thumbnail'>cosas sexis y abeses subidas de tono
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://x.com/Karasu_Chan1204'>https://x.com/Karasu_Chan1204</a></h4><p class='producto-thumbnail'>creador de mangas hentay xxx
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://x.com/syvaron'>https://x.com/syvaron</a></h4><p class='producto-thumbnail'>creador de imagenes de su juego de rol xxx
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://x.com/Anaimiya'>https://x.com/Anaimiya</a></h4><p class='producto-thumbnail'>bailarina asiatica sexy xxx
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://x.com/lewdfroggo'>https://x.com/lewdfroggo</a></h4><p class='producto-thumbnail'>creador de videos animados xxx
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://x.com/reislin_model_'>https://x.com/reislin_model_</a></h4><p class='producto-thumbnail'>actris porno xxx
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://x.com/c0rpsethot'>https://x.com/c0rpsethot</a></h4><p class='producto-thumbnail'>chica trans xxx
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://x.com/ItsDogTown'>https://x.com/ItsDogTown</a></h4><p class='producto-thumbnail'>creador de imagenes y con tenido miuy sujestibo xxx
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://x.com/ErhabeneFrauen'>https://x.com/ErhabeneFrauen</a></h4><p class='producto-thumbnail'>cuenta que publica videos de chicas desnudas
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://es.stripchat.com'>https://es.stripchat.com</a></h4><p class='producto-thumbnail'>camara de sexo
+</p></div><div class='producto-card'><h4 class='producto-title'><a href='https://es.pornhub.com'>https://es.pornhub.com</a></h4><p class='producto-thumbnail'>porno, porno una pagina de porno xxx</p></div>
+
+            </div>,,,
+        </div>
+    </body>
+    <script>
+        // Obtener todos los elementos de video y audio
+        const mediaElements = document.querySelectorAll('video, audio');
+        // Añadir evento a cada elemento
+        mediaElements.forEach(element => {
+            element.addEventListener('play', () => {
+                // Pausar todos los elementos excepto el que se está reproduciendo
+                mediaElements.forEach(el => {
+                    if (el !== element) {
+                        el.pause();
+                    }
+                });
+            });
+        });
+        function cambiarColor(color) {
+              document.getElementById('elemento').style.backgroundColor = color;
+          }
+        function setSearchText(text) {
+          document.getElementById('search').value = text;
+          }
+        function filterList() {
+            // Obtener el valor del campo de búsqueda y convertirlo a minúsculas
+            let searchInput = document.getElementById("search").value.toLowerCase();
+            
+            // Obtener la lista de elementos
+            let items = document.getElementById("item-list").getElementsByTagName("div");
+
+            // Iterar sobre cada elemento y mostrar/ocultar según coincida con la búsqueda
+            for (let i = 0; i < items.length; i++) {
+                let item = items[i].textContent || items[i].innerText;
+
+                // Mostrar el elemento si coincide con la búsqueda
+                if (item.toLowerCase().indexOf(searchInput) > -1) {
+                    items[i].style.display = "";
+                } else {
+                    // Ocultar el elemento si no coincide
+                    items[i].style.display = "none";
+                }
+            }
+        }
+    const checkboxes = document.querySelectorAll('input[name="opcion"]');
+
+    // Limitar a 3 selecciones
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', function () {
+        const checkedCount = document.querySelectorAll('input[name="opcion"]:checked').length;
+        if (checkedCount > 100) {
+          this.checked = false; // Desmarca el último seleccionado
+        }
+      });
+    });
+    // Array de enlaces
+        const enlaces = [
+            'https://www.google.com','https://www.github.com','https://www.stackoverflow.com','https://www.youtube.com','https://www.wikipedia.org','https://www.mozilla.org','https://www.freecodecamp.org','https://www.youtube.com/@saiks7910','https://www.codecademy.com','https://www.udemy.com','https://m.youtube.com/@MiguelASSAL','https://m.youtube.com/@dateunvlog','https://es.babbel.com','https://m.youtube.com/@elescocesgamer','https://m.youtube.com/@charlitocooks','https://m.youtube.com/feed/subscriptions','https://m.youtube.com/@mirioz58calbo','https://m.youtube.com/@LackadaisyComic','https://m.youtube.com/@SOMMER_OFICIAL','https://m.youtube.com/@Platonto','https://linktr.ee/glitch_prod','https://www.youtube.com/@GLITCH','https://store.steampowered.com','https://www.linkedin.com','https://mangaplus.shueisha.co.jp','https://www.youtube.com/@Basquecraft','https://www.twitch.tv/','https://www.twitch.tv/directory/category/splatoon-3','https://www.youtube.com/@SrtoBetto','https://www.youtube.com/@AUNToficial','https://www.youtube.com/@Pemchomchoproject','https://www.youtube.com/@DungeonSoup','https://www.youtube.com/@gohuntleo','https://www.youtube.com/@3Huntle0','https://www.youtube.com/@SrBaityBait','https://www.reddit.com','https://www.youtube.com/@Flashgitz','https://www.youtube.com/@GekkoH','https://www.youtube.com/@TheWildProject','https://www.youtube.com/@1Huntleo-hg4vg','https://www.youtube.com/@TheOdd1sOutES','https://www.youtube.com/@SoloFonseca','https://www.youtube.com/@NateGentile7','https://www.youtube.com/@Baity-Vod','https://x.com/glitch_prod','https://x.com/SaltyPokerFace','https://x.com/swfx_waifu','https://x.com/home','https://x.com/Nagrolaz','https://x.com/Karasu_Chan1204','https://x.com/syvaron','https://x.com/Anaimiya','https://x.com/lewdfroggo','https://x.com/reislin_model_','https://x.com/c0rpsethot','https://x.com/ItsDogTown','https://x.com/ErhabeneFrauen','https://es.stripchat.com','https://es.pornhub.com',
+        ];
+
+        // Función para abrir un enlace aleatorio
+        function abrirEnlaceAleatorio() {
+            const indiceAleatorio = Math.floor(Math.random() * enlaces.length);
+            window.location.href = enlaces[indiceAleatorio];
+        }
+    </script>
+</html>
+    

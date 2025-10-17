@@ -1,0 +1,20 @@
+/media/marneus/JAdlQ/ruta 14/RBN.txt][/home/marneus/Descargas/RBN.txt][/media/marneus/JAdlQ/RT57/RBN.txt
+0=t][Marmol][Aj
+.
+.
+.
+,
+0
+*p0:prss:RBN-junior/regit
+
+*reuv:agrg:/media/marneus/JAdlQ/ruta 14/R 14.txt:/media/marneus/JAdlQ/nupp/g-otro yo/PSA_Mentad.txt
+
+*fufua:reuv:jpg,png,gif,webp,jpeg:/media/marneus/JAdlQ/nupp/Q-GiardinoSacro:/home/marneus/Descargas
+*fufua:reuv:jpg,png,gif,webp,jpeg:/media/marneus/JAdlQ/nupp/Q-GiardinoSacro:/media/marneus/JAdlQ/ruta 14
+*fufua:reuv:jpg,png,gif,webp,jpeg:/media/marneus/JAdlQ/nupp/Q-GiardinoSacro:/home/marneus/ruta00
+
+*fufua:reuv:mp3:/media/marneus/JAdlQ/nupp/Music:/home/marneus/Descargas
+
+*fufua:reuv:mp4,mov:/media/marneus/JAdlQ/nupp/minti-viti:/home/marneus/Descargas
+*fufua:reuv:mp4,mov:/media/marneus/JAdlQ/nupp/minti-viti:/media/marneus/JAdlQ/ruta 14
+*fufua:reuv:mp4,mov:/media/marneus/JAdlQ/nupp/minti-viti:/home/marneus/ruta00
